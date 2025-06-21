@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/thermos1/Documents/dotnet-projects/assignment/Infrastructure/Infrastructure.csproj": {}
+    "/Users/thermos1/Documents/lifekeyshealth/assignment/Infrastructure/Infrastructure.csproj": {}
   },
   "projects": {
-    "/Users/thermos1/Documents/dotnet-projects/assignment/Infrastructure/Infrastructure.csproj": {
+    "/Users/thermos1/Documents/lifekeyshealth/assignment/Infrastructure/Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/thermos1/Documents/dotnet-projects/assignment/Infrastructure/Infrastructure.csproj",
+        "projectUniqueName": "/Users/thermos1/Documents/lifekeyshealth/assignment/Infrastructure/Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "/Users/thermos1/Documents/dotnet-projects/assignment/Infrastructure/Infrastructure.csproj",
+        "projectPath": "/Users/thermos1/Documents/lifekeyshealth/assignment/Infrastructure/Infrastructure.csproj",
         "packagesPath": "/Users/thermos1/.nuget/packages/",
-        "outputPath": "/Users/thermos1/Documents/dotnet-projects/assignment/Infrastructure/obj/",
+        "outputPath": "/Users/thermos1/Documents/lifekeyshealth/assignment/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/thermos1/.nuget/NuGet/NuGet.Config"
