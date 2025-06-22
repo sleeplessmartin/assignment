@@ -1,9 +1,10 @@
 using Application.Checkin.Queries;
 using Infrastructure.Models;
 using Infrastructure;
-using Application.Checkin.Command.Models;
+using Application.Constants;
+using Application.Checkin.Commands.Models;
 
-namespace Application.Checkin.Command
+namespace Application.Checkin.Commands
 {
     public class CreateCheckin : ICreateCheckin
     {
@@ -19,10 +20,12 @@ namespace Application.Checkin.Command
             var checkin = new CheckinModel
             {
                 created_by_id = request.created_by_id,
-                user_id= request.user_id,
-                created_timestamp = request.created_timestamp,
+                user_id = request.user_id,
+                created_timestamp = DateTime.UtcNow,
                 status = request.status,
-                message = request.message
+                message = request.message,
+                updated_by_id = Users.SYSTEM_USER_ID, // Default to system user
+                updated_timestamp = DateTime.UtcNow
             };
 
             _context.Checkins.Add(checkin);

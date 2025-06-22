@@ -1,13 +1,13 @@
 using Application.Constants;
 
-namespace Application.Checkin.Command.Models
+namespace Application.Checkin.Commands.Models
 {
     public class UpdateCheckinRequest
     {
         public string status { get; set; } = null!;
         public string? message { get; set; }
         public DateTime updated_timestamp { get; set; } = DateTime.UtcNow;
-        public long updated_by_id { get; set; } = Users.SYSTEM_USER_ID;
+        public string updated_by_id { get; set; } = Users.SYSTEM_USER_ID;
 
         // Additional properties can be added as needed
     }

@@ -22,6 +22,9 @@ namespace Application.Checkin.Queries
                     status = c.status,
                     message = c.message,
                     created_timestamp = c.created_timestamp,
+                    created_by_id = c.created_by_id,
+                    updated_timestamp = c.updated_timestamp,
+                    updated_by_id = c.updated_by_id,
                     user_id = c.user_id
                 })
                 .FirstOrDefaultAsync(cancellationToken);

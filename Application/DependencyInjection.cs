@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Application.Checkin.Queries;
-using Application.Checkin.Command;
+using Application.Checkin.Commands;
 
 namespace Application
 {

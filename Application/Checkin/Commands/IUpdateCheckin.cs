@@ -1,7 +1,7 @@
-using Application.Checkin.Command.Models;
+using Application.Checkin.Commands.Models;
 using Application.Checkin.Queries;
 
-namespace Application.Checkin.Command
+namespace Application.Checkin.Commands
 {
     public interface IUpdateCheckin
     {

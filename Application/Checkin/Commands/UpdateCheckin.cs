@@ -1,9 +1,9 @@
 using Application.Checkin.Queries;
 using Infrastructure.Models;
 using Infrastructure;
-using Application.Checkin.Command.Models;
+using Application.Checkin.Commands.Models;
 
-namespace Application.Checkin.Command
+namespace Application.Checkin.Commands
 {
     public class UpdateCheckin : IUpdateCheckin
     {

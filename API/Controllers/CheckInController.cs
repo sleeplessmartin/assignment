@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Application.Checkin.Queries;
-using Application.Checkin.Command.Models;
-using Application.Checkin.Command;
+using Application.Checkin.Commands.Models;
+using Application.Checkin.Commands;
 namespace API
 {
     [ApiController]

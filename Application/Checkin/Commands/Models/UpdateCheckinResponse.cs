@@ -1,6 +1,6 @@
 using Application.Constants;
 
-namespace Application.Checkin.Command.Models
+namespace Application.Checkin.Commands.Models
 {
     public class UpdateCheckinResponse
     {

@@ -19,18 +19,18 @@ namespace Infrastructure.Models
         public string? message { get; set; }
 
         [Column("user_id")]
-        public long user_id { get; set; }
+        public required string user_id { get; set; }
 
         [Column("created_timestamp")]
         public DateTime created_timestamp { get; set; }
 
         [Column("created_by_id")]
-        public long created_by_id { get; set; }
+        public required string created_by_id { get; set; }
 
         [Column("updated_timestamp")]
         public DateTime updated_timestamp { get; set; }
 
         [Column("updated_by_id")]
-        public long updated_by_id { get; set; }
+        public required string updated_by_id { get; set; }
     }
 }

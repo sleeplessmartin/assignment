@@ -3378,19 +3378,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/thermos1/.nuget/packages/": {}
+    "/Users/thermosisima/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/thermos1/Documents/lifekeyshealth/assignment/API/API.csproj",
+      "projectUniqueName": "/Users/thermosisima/Documents/lifekeyshealth/assignment/API/API.csproj",
       "projectName": "API",
-      "projectPath": "/Users/thermos1/Documents/lifekeyshealth/assignment/API/API.csproj",
-      "packagesPath": "/Users/thermos1/.nuget/packages/",
-      "outputPath": "/Users/thermos1/Documents/lifekeyshealth/assignment/API/obj/",
+      "projectPath": "/Users/thermosisima/Documents/lifekeyshealth/assignment/API/API.csproj",
+      "packagesPath": "/Users/thermosisima/.nuget/packages/",
+      "outputPath": "/Users/thermosisima/Documents/lifekeyshealth/assignment/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/thermos1/.nuget/NuGet/NuGet.Config"
+        "/Users/thermosisima/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -3402,11 +3402,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/thermos1/Documents/lifekeyshealth/assignment/Application/Application.csproj": {
-              "projectPath": "/Users/thermos1/Documents/lifekeyshealth/assignment/Application/Application.csproj"
+            "/Users/thermosisima/Documents/lifekeyshealth/assignment/Application/Application.csproj": {
+              "projectPath": "/Users/thermosisima/Documents/lifekeyshealth/assignment/Application/Application.csproj"
             },
-            "/Users/thermos1/Documents/lifekeyshealth/assignment/Infrastructure/Infrastructure.csproj": {
-              "projectPath": "/Users/thermos1/Documents/lifekeyshealth/assignment/Infrastructure/Infrastructure.csproj"
+            "/Users/thermosisima/Documents/lifekeyshealth/assignment/Infrastructure/Infrastructure.csproj": {
+              "projectPath": "/Users/thermosisima/Documents/lifekeyshealth/assignment/Infrastructure/Infrastructure.csproj"
             }
           }
         }
@@ -3460,7 +3460,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.411/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

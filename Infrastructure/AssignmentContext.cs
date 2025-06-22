@@ -12,7 +12,6 @@ namespace Infrastructure
 
         // Define DbSets for your entities here
         public DbSet<CheckinModel> Checkins { get; set; }
-        public DbSet<PortalUserModel> PortalUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
