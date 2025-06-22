@@ -1,0 +1,22 @@
+[
+    {
+        "user_id":"thermosisima",
+        "full_name":"Ted Martin Hermosisima",
+        "password":"welcome123"
+    },
+    {
+        "user_id":"lsalander",
+        "full_name":"Lisbeth Salander",
+        "password":"welcome123"
+    },
+    {
+        "user_id":"alicewonders",
+        "full_name":"Alice Wonders",
+        "password":"welcome123"
+    },
+    {
+        "user_id":"bobbuilder",
+        "full_name":"Bob Builder",
+        "password":"welcome123"
+    }
+]
