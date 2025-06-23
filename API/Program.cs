@@ -12,15 +12,15 @@ services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
 services.AddControllers();
 
-// services
-//     .AddApplicationAsync();
-//     .AddInfrastructure(builder.Configuration);
 await services.AddApplicationAsync();
 services.AddInfrastructure(builder.Configuration);
 
 
 var app = builder.Build();
 
+// Configure the HTTP request pipeline. Central Exception Handler Middleware
+// This middleware will handle exceptions globally and return appropriate responses.
+// This is to avoid putting try-catch blocks in every controller action.
 app.UseMiddleware<AssignmentExceptionHandlerMiddleware>();
 
 // Configure the HTTP request pipeline.

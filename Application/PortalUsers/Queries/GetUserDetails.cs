@@ -9,7 +9,12 @@ namespace Application.PortalUsers.Queries
         {
             _users = users ?? throw new ArgumentNullException(nameof(users));
         }
-
+        
+        /// <summary>
+        /// Retrieves user details by user ID and password. In a real application, this would typically involve a database query.
+        /// </summary>
+        /// <param name="request">The request containing user ID and password.</param>
+        /// <returns>A task that represents the asynchronous operation, containing the user details.</returns>
         public Task<PortalUserResponse> GetUserByIdAsync(PortalUserRequest request)
         {
             var user = _users.FirstOrDefault(u => u.user_id == request.user_id && u.password == request.password);

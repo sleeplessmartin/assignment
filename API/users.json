@@ -10,12 +10,12 @@
         "password":"welcome123"
     },
     {
-        "user_id":"alicewonders",
+        "user_id":"awonders", 
         "full_name":"Alice Wonders",
         "password":"welcome123"
     },
     {
-        "user_id":"bobbuilder",
+        "user_id":"bbuilder",
         "full_name":"Bob Builder",
         "password":"welcome123"
     }

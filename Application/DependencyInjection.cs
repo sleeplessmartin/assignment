@@ -12,7 +12,12 @@ namespace Application
         public static async Task<IServiceCollection> AddApplicationAsync(this IServiceCollection services)
         {
             var portalUsers = await GetPortalUsers();
+
+            //add mock users to the service collection
             services.AddSingleton(portalUsers);
+
+            //register application services
+            services.AddTransient<IGetCheckinListByFilter, GetCheckinListByFilter>();
             services.AddTransient<IGetUserDetails, GetUserDetails>();
             services.AddTransient<IGetCheckinById, GetCheckinById>();
             services.AddTransient<ICreateCheckin, CreateCheckin>();

@@ -11,13 +11,16 @@ namespace API
         private readonly IGetCheckinById _igcbi;
         private readonly ICreateCheckin _icc;
         private readonly IUpdateCheckin _iuc;
+        private readonly IGetCheckinListByFilter _igclbf;
 
         public CheckInController(
+            IGetCheckinListByFilter igclbf,
             IGetCheckinById igcbi,
             ICreateCheckin icc,
             IUpdateCheckin iuc)
         {
             _icc = icc;
+            _igclbf = igclbf;
             _igcbi = igcbi;
             _iuc = iuc;
         }
@@ -27,6 +30,15 @@ namespace API
         {
             // Simulate a check-in process
             var result = await _igcbi.GetCheckinByIdAsync(checkin_id, cancellationToken);
+
+            return Ok(result);
+        }
+
+        [HttpGet("/search/{filter}")]
+        public async Task<ActionResult<CheckinResponse>> GetCheckInList(string filter, CancellationToken cancellationToken)
+        {
+            // Simulate a check-in process
+            var result = await _igclbf.GetCheckinListByFilterAsync(filter, cancellationToken);
 
             return Ok(result);
         }
