@@ -17,44 +17,35 @@ namespace Application.Checkin.Queries
         {
             var isDate = DateTime.TryParse(filter, out DateTime parsedDate);
 
+            IQueryable<Infrastructure.Models.CheckinModel> query;
+
             if (isDate)
             {
                 parsedDate = DateTime.SpecifyKind(parsedDate.Date, DateTimeKind.Utc);
                 var nextDay = parsedDate.AddDays(1);
-
-                // If the filter is a date, we can filter check-ins by date.
-                return await _context.Checkins
-                    .Where(c => c.created_timestamp >= parsedDate && c.created_timestamp < nextDay)
-                    .Select(c => new CheckinResponse
-                    {
-                        checkin_id = c.checkin_id,
-                        status = c.status,
-                        message = c.message,
-                        created_timestamp = c.created_timestamp,
-                        created_by_id = c.created_by_id,
-                        updated_timestamp = c.updated_timestamp,
-                        updated_by_id = c.updated_by_id,
-                        user_id = c.user_id
-                    })
-                    .OrderByDescending(c => c.created_timestamp)
-                    .ToListAsync(cancellationToken);
+                query = _context.Checkins
+                    .Where(c => c.created_timestamp >= parsedDate && c.created_timestamp < nextDay);
+            }
+            else
+            {
+                query = _context.Checkins
+                    .Where(c => c.user_id.Contains(filter));
             }
 
-            return await _context.Checkins
-                    .Where(c => c.user_id.Contains(filter))
-                    .Select(c => new CheckinResponse
-                    {
-                        checkin_id = c.checkin_id,
-                        status = c.status,
-                        message = c.message,
-                        created_timestamp = c.created_timestamp,
-                        created_by_id = c.created_by_id,
-                        updated_timestamp = c.updated_timestamp,
-                        updated_by_id = c.updated_by_id,
-                        user_id = c.user_id
-                    })
-                    .OrderByDescending(c => c.created_timestamp)
-                    .ToListAsync(cancellationToken);
+            return await query
+                .OrderByDescending(c => c.created_timestamp)
+                .Select(c => new CheckinResponse
+                {
+                    checkin_id = c.checkin_id,
+                    status = c.status,
+                    message = c.message,
+                    created_timestamp = c.created_timestamp,
+                    created_by_id = c.created_by_id,
+                    updated_timestamp = c.updated_timestamp,
+                    updated_by_id = c.updated_by_id,
+                    user_id = c.user_id
+                })
+                .ToListAsync(cancellationToken);
         }
     }
 }
