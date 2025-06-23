@@ -35,7 +35,7 @@ namespace API
         }
 
         [HttpGet("/search/{filter}")]
-        public async Task<ActionResult<CheckinResponse>> GetCheckInList(string filter, CancellationToken cancellationToken)
+        public async Task<ActionResult<CheckinResponse>> GetCheckInList([FromRoute]string filter, CancellationToken cancellationToken)
         {
             // Simulate a check-in process
             var result = await _igclbf.GetCheckinListByFilterAsync(filter, cancellationToken);

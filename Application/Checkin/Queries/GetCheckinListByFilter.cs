@@ -19,9 +19,12 @@ namespace Application.Checkin.Queries
 
             if (isDate)
             {
+                parsedDate = DateTime.SpecifyKind(parsedDate.Date, DateTimeKind.Utc);
+                var nextDay = parsedDate.AddDays(1);
+
                 // If the filter is a date, we can filter check-ins by date.
                 return await _context.Checkins
-                    .Where(c => c.created_timestamp.Date == parsedDate.Date)
+                    .Where(c => c.created_timestamp >= parsedDate && c.created_timestamp < nextDay)
                     .Select(c => new CheckinResponse
                     {
                         checkin_id = c.checkin_id,
