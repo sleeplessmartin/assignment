@@ -1,5 +1,3 @@
-# Assignment
-
 # Assignment API
 
 ## Endpoints Overview
