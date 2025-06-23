@@ -9,7 +9,7 @@
   - Retrieves a check-in by its ID.
   - Usage: `GET /api/checkin/1`
 - **GET /api/checkin?filter={filter}**
-  - Retrieves a list of check-ins filtered by a string (status/message/user_id) or a date (created_timestamp).
+  - Retrieves a list of check-ins filtered by a string (user_id) or a date (created_timestamp).
   - Usage: `GET /api/checkin?filter=happy` or `GET /api/checkin?filter=2025-06-23`
 - **POST /api/checkin**
   - Creates a new check-in.
@@ -66,6 +66,7 @@
 
 - In a real application, user id's (`user_id`, `created_by_id`, `updated_by_id`) would likely be a foreign key to a user table and should be a bigint/long datatype instead of varchar or string. For purposes of simplicity, I used string as id's.
 - For the `GetCheckinsListByFilter` service, this was simplified intentionally. I would normally use stored procedures for queries involving joins and where clauses a little more complex than straight ID searchers.
+- For simplicity, the connection string is stored in the `appsettings.json` file. This would normally be in a `Secrets Manager` (AWS) or in a `Key Vault` (Azure).
 
 ---
 
