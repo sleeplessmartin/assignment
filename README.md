@@ -5,7 +5,7 @@
 ## Endpoints Overview
 
 ### 1. Check-in Endpoints
-- **GET /api/checkin/{id}**
+- **GET /api/checkin/{checkin_id}**
   - Retrieves a check-in by its ID.
   - Usage: `GET /api/checkin/1`
 - **GET /api/checkin?filter={filter}**
@@ -14,14 +14,16 @@
 - **POST /api/checkin**
   - Creates a new check-in.
   - Usage: Send a JSON body with required fields.
-- **PUT /api/checkin/{id}**
+- **PUT /api/checkin/{checkin_id}**
   - Updates an existing check-in by ID.
   - Usage: Send a JSON body with updated fields.
 
 ### 2. User Endpoints
-- **GET /api/user/{id}**
+- **POST /api/user**
   - Retrieves user details by user ID.
-  - Usage: `GET /api/user/1`
+  - This was set to a POST because this will simulate a user login, which normally should be checked against an identity server
+  - Note that user id's are set as strings for simplicity. Please go to `Shortcuts taken` section.
+  - Usage: `POST /api/user` and send a JSON body with the `user_id` and `password`.
 
 ## Running Migrations on a Fresh Machine
 
@@ -60,9 +62,10 @@
 
 ## Shortcuts Taken
 
-- Any 'NOTE to Oleg' comments in the code are collected here:
+> Any 'NOTE to Oleg' comments in the code are collected here:
 
-> In a real application, this would likely be a foreign key to a user table. A bigint/long datatype instead of varchar or string
+- In a real application, user id's (`user_id`, `created_by_id`, `updated_by_id`) would likely be a foreign key to a user table and should be a bigint/long datatype instead of varchar or string. For purposes of simplicity, I used string as id's.
+- For the `GetCheckinsListByFilter` service was simplified intentionally. I would normally use a stored procedures for queries involving joins and where clauses a little more complex than straight ID searchers.
 
 ---
 
