@@ -1,4 +1,6 @@
 # .NET
+bin/
+obj/
 **/bin/
 **/obj/
 *.user
