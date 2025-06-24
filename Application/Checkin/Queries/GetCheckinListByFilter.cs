@@ -29,8 +29,17 @@ namespace Application.Checkin.Queries
             }
             else
             {
-                query = _context.Checkins
+                if (filter == string.Empty)
+                {
+                    query = _context.Checkins;
+
+                }
+                else
+                {
+                    query = _context.Checkins
                     .Where(c => c.user_id.Contains(filter));
+                }
+                
             }
 
             return await query

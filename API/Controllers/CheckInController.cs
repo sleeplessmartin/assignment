@@ -34,11 +34,11 @@ namespace API
             return Ok(result);
         }
 
-        [HttpGet("/search/{filter}")]
-        public async Task<ActionResult<CheckinResponse>> GetCheckInList([FromRoute]string filter, CancellationToken cancellationToken)
+        [HttpGet("search/{filter?}")]
+        public async Task<ActionResult<CheckinResponse>> GetCheckInList(CancellationToken cancellationToken, [FromRoute]string? filter = "")
         {
             // Simulate a check-in process
-            var result = await _igclbf.GetCheckinListByFilterAsync(filter, cancellationToken);
+            var result = await _igclbf.GetCheckinListByFilterAsync(filter ?? string.Empty, cancellationToken);
 
             return Ok(result);
         }
