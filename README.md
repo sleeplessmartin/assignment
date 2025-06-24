@@ -1,5 +1,56 @@
 # Assignment API
 
+## Setup Instructions
+
+### 1. Prerequisites
+
+- [.NET SDK](https://dotnet.microsoft.com/download) (latest recommended)
+- [PostgreSQL](https://www.postgresql.org/download/) (ensure it is running and accessible)
+- (Optional) [dotnet-ef](https://docs.microsoft.com/en-us/ef/core/cli/dotnet) CLI tool for migrations:
+  ```sh
+  dotnet tool install --global dotnet-ef
+  ```
+
+### 2. Clone the Repository
+
+```sh
+git clone https://github.com/sleeplessmartin/assignment.git
+cd assignment
+```
+
+### 3. Restore NuGet Packages
+
+```sh
+dotnet restore
+```
+
+### 4. Configure the Database
+
+- Update the connection string in `API/appsettings.json` if needed.
+- Ensure PostgreSQL is running and the database/user in the connection string exist.
+
+### 5. Run Migrations
+
+To create/update the database schema:
+
+```sh
+dotnet ef database update --project Infrastructure/Infrastructure.csproj --startup-project API/API.csproj
+```
+
+### 6. Build and Run the API
+
+```sh
+dotnet run --project API/API.csproj
+```
+
+The API will start (by default on http://localhost:5210 or as configured in `launchSettings.json`).
+
+### 7. Run Tests
+
+```sh
+dotnet test
+```
+
 ## Endpoints Overview
 
 ### 1. Check-in Endpoints
@@ -19,8 +70,7 @@
 ### 2. User Endpoints
 - **POST /api/user**
   - Retrieves user details by user ID.
-  - This was set to a POST because this will simulate a user login, which normally should be checked against an identity server
-  - Note that user id's are set as strings for simplicity. Please go to `Shortcuts taken` section.
+  - This was set to a POST because this will simulate a user login, which normally should be checked against an identity server.
   - Usage: `POST /api/user` and send a JSON body with the `user_id` and `password`.
 
 ## Running Migrations on a Fresh Machine
