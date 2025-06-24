@@ -10,6 +10,6 @@ namespace Application.Checkin.Commands
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public Task<UpdateCheckinResponse> UpdateCheckinAsync(UpdateCheckinRequest request, long checkin_id);
+        public Task<CheckinResponse> UpdateCheckinAsync(UpdateCheckinRequest request, long checkin_id);
     }
 }

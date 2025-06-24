@@ -14,7 +14,7 @@ namespace Application.Checkin.Commands
             _context = context;
         }
 
-        public async Task<UpdateCheckinResponse> UpdateCheckinAsync(UpdateCheckinRequest request, long checkin_id)
+        public async Task<CheckinResponse> UpdateCheckinAsync(UpdateCheckinRequest request, long checkin_id)
         {
             var checkin = _context.Checkins.FirstOrDefault(c => c.checkin_id == checkin_id);
 
@@ -32,11 +32,16 @@ namespace Application.Checkin.Commands
 
             await _context.SaveChangesAsync();
 
-            return new UpdateCheckinResponse
+            return new CheckinResponse
             {
                 updated_timestamp = checkin.updated_timestamp,
                 status = checkin.status,
-                message = checkin.message
+                message = checkin.message,
+                user_id = checkin.user_id,
+                checkin_id = checkin.checkin_id,
+                created_timestamp = checkin.created_timestamp,
+                created_by_id = checkin.created_by_id,
+                updated_by_id = checkin.updated_by_id
             };
         }
     }
