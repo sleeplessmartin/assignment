@@ -1,6 +1,5 @@
 using Application;
 using Infrastructure;
-using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,11 +11,22 @@ services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
 services.AddControllers();
 
+services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
 await services.AddApplicationAsync();
 services.AddInfrastructure(builder.Configuration);
 
-
 var app = builder.Build();
+
+app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline. Central Exception Handler Middleware
 // This middleware will handle exceptions globally and return appropriate responses.

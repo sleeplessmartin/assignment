@@ -4,7 +4,7 @@ using Application.PortalUsers.Queries.Models;
 namespace API
 {
     [ApiController]
-    [Route("user")]
+    [Route("api/user")]
     public class UserController : ControllerBase
     {
         private readonly IGetUserDetails _igud;

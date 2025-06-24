@@ -10,13 +10,13 @@
         "password":"welcome123"
     },
     {
-        "user_id":"awonders", 
-        "full_name":"Alice Wonders",
+        "user_id":"osurkov", 
+        "full_name":"Oleg Surkov",
         "password":"welcome123"
     },
     {
-        "user_id":"bbuilder",
-        "full_name":"Bob Builder",
+        "user_id":"gebenezer",
+        "full_name":"Gudmundur Ebenezer",
         "password":"welcome123"
     }
 ]

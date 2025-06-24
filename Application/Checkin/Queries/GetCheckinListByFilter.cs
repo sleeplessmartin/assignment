@@ -1,5 +1,6 @@
 
 using Infrastructure;
+using Infrastructure.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.Checkin.Queries
@@ -17,7 +18,7 @@ namespace Application.Checkin.Queries
         {
             var isDate = DateTime.TryParse(filter, out DateTime parsedDate);
 
-            IQueryable<Infrastructure.Models.CheckinModel> query;
+            IQueryable<CheckinModel> query;
 
             if (isDate)
             {

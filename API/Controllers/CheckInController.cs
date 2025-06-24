@@ -5,7 +5,7 @@ using Application.Checkin.Commands;
 namespace API
 {
     [ApiController]
-    [Route("checkin")]
+    [Route("api/checkin")]
     public class CheckInController : ControllerBase
     {
         private readonly IGetCheckinById _igcbi;
@@ -54,7 +54,7 @@ namespace API
             var result = await _icc.CreateCheckinAsync(checkin);
 
             return CreatedAtAction(
-                nameof(GetCheckIn),
+                nameof(PostCheckIn),
                 new { id = result.checkin_id },
                 checkin);
         }
