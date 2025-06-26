@@ -112,7 +112,7 @@ dotnet test
 
 > Any 'NOTE to Oleg' comments in the code are collected here:
 
-- In a real application, user id's (`user_id`, `created_by_id`, `updated_by_id`) would likely be a foreign key to a user table and should be a bigint/long datatype instead of varchar or string. For purposes of simplicity, I used string as id's.
+- In a real-world application, user id's (`user_id`, `created_by_id`, `updated_by_id`) would likely be a foreign key to a user table and should be a bigint/long datatype instead of varchar or string. For purposes of simplicity, I used string as id's.
 - For the `GetCheckinsListByFilter` service, this was simplified intentionally. I would normally use stored procedures for queries involving joins and where clauses a little more complex than straight ID searchers.
 - For simplicity, the connection string is stored in the `appsettings.json` file. This would normally be in a `Secrets Manager` (AWS) or in a `Key Vault` (Azure).
 - Mock users are in the `users.json` found in the root of the API project. 
